@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveModifiedFiles</string>
+	<key>command</key>
+	<string>#!/usr/bin/env bash
+
+if [[ -n "$TM_PROJECT_DIRECTORY" ]]; then
+	res=$("$TM_SUPPORT_PATH/bin/CocoaDialog.app/Contents/MacOS/CocoaDialog" inputbox --title "New Page" \
+	    --informative-text "Page Title:" \
+	    --button1 "Okay" --button2 "Cancel")
+
+	[[ $(head -n1 &lt;&lt;&lt;"$res") == "2" ]] &amp;&amp; exit
+	
+	res=$(tail -n1 &lt;&lt;&lt;"$res")
+	$(rake post title="$res" &lt;&lt;&lt;"n")
+	file=$(ls -lrt "$TM_PROJECT_DIRECTORY/pages/" | awk '{ f=$NF }; END{ print f }')
+	open -a TextMate "$TM_PROJECT_DIRECTORY/pages/$file"
+else
+	echo "Please open Jekyll as a project."
+fi
+</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>~@j</string>
+	<key>name</key>
+	<string>New Page</string>
+	<key>outputLocation</key>
+	<string>discard</string>
+	<key>uuid</key>
+	<string>411CC92D-84D2-4FA6-BE72-52F3E3051175</string>
+</dict>
+</plist>
