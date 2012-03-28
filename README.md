@@ -11,20 +11,10 @@ It works fine in both TextMate 1.5.10 and TextMate 2.0.
 #Install with Git
 
 TextMate 1.5.10
-```
-mkdir -p ~/Library/Application\ Support/TextMate/Bundles
-cd ~/Library/Application\ Support/TextMate/Bundles
-git clone git://github.com/lexrus/Jekyll-Bootstrap.tmbundle.git "Jekyll-Bootstrap.tmbundle"
-osascript -e 'tell app "TextMate" to reload bundles'
-```
+`mkdir -p ~/Library/Application\ Support/TextMate/Bundles;cd ~/Library/Application\ Support/TextMate/Bundles;git clone git://github.com/lexrus/Jekyll-Bootstrap.tmbundle.git "Jekyll-Bootstrap.tmbundle";osascript -e 'tell app "TextMate" to reload bundles'`
 
 TextMate 2.0
-```
-mkdir -p ~/Library/Application\ Support/Avian/Bundles
-cd ~/Library/Application\ Support/Avian/Bundles
-git clone git://github.com/lexrus/Jekyll-Bootstrap.tmbundle.git "Jekyll-Bootstrap.tmbundle"
-osascript -e 'tell app "TextMate" to reload bundles'
-```
+`mkdir -p ~/Library/Application\ Support/Avian/Bundles;cd ~/Library/Application\ Support/Avian/Bundles;git clone git://github.com/lexrus/Jekyll-Bootstrap.tmbundle.git "Jekyll-Bootstrap.tmbundle";osascript -e 'tell app "TextMate" to reload bundles'`
 
 #More commands
 
